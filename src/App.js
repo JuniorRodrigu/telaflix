@@ -1,23 +1,41 @@
-import React, {useEffect} from "react";
-import tmdb from "./Tmdb"; 
+import React, { useEffect, useState } from "react";
+import tmdb from "./Tmdb";
 
-export default () =>{
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => {
 
-useEffect(()=>{
-    const loadAll = async () =>{
-let list =await tmdb.getHomeList();
-console.log(list);
-
-    }
-    loadAll();
-},[]);
+    const [movieList, setMovieList] = useState([]);
 
 
-return(
+    useEffect(() => {
+        const loadAll = async () => {
+            let list = await tmdb.getHomeList();
+            setMovieList(list);
 
 
-    <div>ola mundo</div>
-);
+        }
+        loadAll();
+    }, []);
+
+
+    return (
+
+
+        <div className="page">
+            <section className="lista">
+                {movieList.map((item, key)=> (
+                    <div>
+                        {item.title}
+                    </div>
+
+                ))}
+            </section>
+
+
+
+
+        </div>
+    );
 
 
 
