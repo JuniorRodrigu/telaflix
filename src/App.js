@@ -6,7 +6,7 @@ export default () =>{
 useEffect(()=>{
     const loadAll = async () =>{
 let list =await tmdb.getHomeList();
-setMovieList(list)
+console.log(list);
 
     }
     loadAll();
@@ -16,10 +16,7 @@ setMovieList(list)
 return(
 
 
-    <div className="page">
-
-        
-    </div>
+    <div>ola mundo</div>
 );
 
 
