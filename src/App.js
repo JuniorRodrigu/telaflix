@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Tmdb from "./Tmdb";
-import MovieRow from "./components/MovieRow";
+import MovieRow from "./components/MovieRow.js";
+
+
+
+
 export default () => {
   const [movieList, setMovieList] = useState([]);
   useEffect(()=>{
     const loadAll = async () => {
-      //get list
       let list = await Tmdb.getHomeList();
       setMovieList(list);
     }
