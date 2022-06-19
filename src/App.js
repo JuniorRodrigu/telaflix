@@ -3,6 +3,7 @@ import Tmdb from "./Tmdb";
 import MovieRow from "./components/MovieRow.js";
 import './App.css';
 import FeaturedMoveie from "./components/FeaturedMoveie.js";
+import Header from "./components/Header";
 
 
 
@@ -10,6 +11,7 @@ import FeaturedMoveie from "./components/FeaturedMoveie.js";
 export default () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData ] = useState(null);
+  const [pretoHeader, setpretoHeader] = useState(false);
 
 
   useEffect(()=>{
@@ -27,8 +29,29 @@ export default () => {
     }
     loadAll()
   },[]);
+  useEffect(()=>{
+    const scrollListener = () => {
+      if(window.scrollY > 10){
+        setpretoHeader(true)
+
+      }
+      else{
+        setpretoHeader(false)
+      }
+
+    }
+    window.addEventListener('scroll', scrollListener);
+
+    return()=>{
+      window.removeEventListener('scroll', scrollListener);
+
+    }
+
+  },[]);
   return (
     <div className="page">
+
+      <Header preto={pretoHeader}/>
         {featuredData &&   <FeaturedMoveie item={featuredData}/>
         
         }
