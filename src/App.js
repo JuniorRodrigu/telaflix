@@ -8,6 +8,7 @@ import Header from "./components/Header";
 
 
 
+
 export default () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData ] = useState(null);
@@ -49,8 +50,11 @@ export default () => {
 
   },[]);
   return (
+    
     <>
+    
     <div className="page">
+      
 
       <Header preto={pretoHeader}/>
         {featuredData &&   <FeaturedMoveie item={featuredData}/>
