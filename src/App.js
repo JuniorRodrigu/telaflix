@@ -49,6 +49,7 @@ export default () => {
 
   },[]);
   return (
+    <>
     <div className="page">
 
       <Header preto={pretoHeader}/>
@@ -62,5 +63,11 @@ export default () => {
     ))}
 </section>
 </div>
+{movieList.length<= 0 &&
+<div className="load">
+  <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif"></img>
+</div>
+}
+</>
   );
 }
