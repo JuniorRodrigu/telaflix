@@ -8,7 +8,7 @@ import 'swiper/css';
 export default ({ title, items }) => {
   return (
     <Swiper
-      spaceBetween={50}
+      spaceBetween={items}
       slidesPerView={items}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
