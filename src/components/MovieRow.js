@@ -1,38 +1,41 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./MovieRow.css";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
+import { Navigation, Pagination } from "swiper";
 export default ({ title, items }) => {
   return (
+    
     <Swiper
-      spaceBetween={items}
-      slidesPerView={items}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+    slidesPerView={9}
+    spaceBetween={30}
+    pagination={{
+      clickable: true,
+    }}
+    modules={[Pagination]}
+    className="mySwiper"
     >   
-     <SwiperSlide>
+    <h1>{title}</h1>
+    
      <div>
       
-        <h1>{title}</h1>
+        
       
       <div className="movieRow--listarea">
+        
         <div className="movieRow--list">
           {items.results.length > 0 &&
             items.results.map((item, key) => (
-                <div key={key} className="movieRow--item">
-                <img
+                <div key={key} className="movieRow--item"><SwiperSlide> 
+                <img 
                   src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                   alt={item.original_title}
-                />
+                /> </SwiperSlide>
               </div>
             ))}
         </div>
       </div>
     </div>
-    </SwiperSlide>
     </Swiper>
   );
 };

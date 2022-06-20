@@ -9,7 +9,7 @@
   
 }
 .movieRow--list {
-    width: 99999999px;
+    
 }
 .movieRow--item {
     display: inline-block;
@@ -50,3 +50,27 @@
     opacity: 1;
 
 }
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+margin-left: 20vh;
+  
+    
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+   left: 35vh;
+    width: 50vh;
+    height: 35vh;
+    
+  }
+  
+  
