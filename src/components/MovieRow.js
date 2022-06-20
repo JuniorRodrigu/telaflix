@@ -13,7 +13,7 @@ export default ({ title, items }) => {
             items.results.map((item, key) => (
                 <div key={key} className="movieRow--item">
                 <img
-                  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                   alt={item.original_title}
                 />
               </div>
