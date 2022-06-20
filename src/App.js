@@ -9,6 +9,7 @@ import Header from "./components/Header";
 
 
 
+
 export default () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData ] = useState(null);
@@ -51,13 +52,10 @@ export default () => {
   },[]);
   return (
     
-    
     <>
     
-    
     <div className="page">
-      
-
+  
       <Header preto={pretoHeader}/>
         {featuredData &&   <FeaturedMoveie item={featuredData}/>
         
@@ -68,6 +66,7 @@ export default () => {
         <MovieRow key={key} title={item.title} items={item.items}/>
     ))}
 </section>
+
 </div>
 {movieList.length<= 0 &&
 <div className="load">

@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import "./MovieRow.css";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
 export default ({ title, items }) => {
   return (
-    <div>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >   
+     <SwiperSlide>
+     <div>
       
         <h1>{title}</h1>
       
@@ -21,5 +32,7 @@ export default ({ title, items }) => {
         </div>
       </div>
     </div>
+    </SwiperSlide>
+    </Swiper>
   );
 };
