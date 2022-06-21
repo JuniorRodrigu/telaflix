@@ -16,7 +16,7 @@ body{
 margin-top: -150px;
 }
 .load{
-    height: 100vh;
+    
     position: fixed;
     z-index: 99;
     top: 0;

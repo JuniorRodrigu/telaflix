@@ -5,7 +5,8 @@ import 'swiper/css';
 import { Navigation, Pagination } from "swiper";
 export default ({ title, items }) => {
   return (
-    
+    <>
+    <div><h1>{title}</h1></div>
     <Swiper
     slidesPerView={4}
     spaceBetween={10}
@@ -15,7 +16,7 @@ export default ({ title, items }) => {
     modules={[Pagination]}
     className="mySwiper"
     >   
-    <h1>{title}</h1>
+  
     
      <div>
       
@@ -37,5 +38,6 @@ export default ({ title, items }) => {
       </div>
     </div>
     </Swiper>
+    </>
   );
 };
