@@ -77,9 +77,9 @@
   }
   
   .swiper-slide img {
-   left: 35vh;
-    width: 50vh;
-    height: 35vh;
+   left: 35px;
+    width: 100%;
+    height: 100%;
     
   }
   

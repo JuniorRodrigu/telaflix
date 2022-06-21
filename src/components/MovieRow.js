@@ -7,7 +7,7 @@ export default ({ title, items }) => {
   return (
     
     <Swiper
-    slidesPerView={9}
+    slidesPerView={4}
     spaceBetween={10}
     pagination={{
       clickable: true,
